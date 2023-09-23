@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 
-const Bookmark = ({bookmark}) => {
-    const {title} = bookmark;
-  
-  
+const Bookmark = ({ bookmark }) => {
+    const { title } = bookmark;
+
+
     return (
-       <div>
-       <li>{title}</li>
-       </div>
+        <div>
+            <li>{title}</li>
+        </div>
     );
 };
 

@@ -42,8 +42,10 @@ const Bookmarks = ({ bookmarks }) => {
           bookmarks.map((bookmark, idx) => {
             if (credit>=20) {
              return notify();   
+            }else{
+                return <Bookmark key={idx} bookmark={bookmark}></Bookmark>
             }
-           return <Bookmark key={idx} bookmark={bookmark}></Bookmark>
+           
           }
             
           )
