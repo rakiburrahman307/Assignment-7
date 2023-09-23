@@ -1,8 +1,9 @@
 
 import PropTypes from 'prop-types';
 
-const Course = ({course}) => {
-    const {title,cover_url,description} = course;
+
+const Course = ({course, handleAddToBookmarks}) => {
+    const {title,cover_url,description,price,credit} = course;
     return ( 
      
            <div className="card w-80 bg-base-100 shadow-xl">
@@ -12,8 +13,12 @@ const Course = ({course}) => {
   <div className="card-body items-center text-center">
     <h2 className="card-title">{title}</h2>
     <p>{description}</p>
+    <div className='flex justify-evenly items-center gap-5'>
+        <p>Price: {price}</p>
+        <p>Credit: {credit}</p>
+    </div>
   
-      <button className="bg-blue-800 text-white w-full px-6 py-2 rounded-xl hover:bg-blue-600">Select</button>
+      <button onClick={()=>handleAddToBookmarks(course)} className="bg-blue-800 text-white w-full px-6 py-2 rounded-xl hover:bg-blue-600">Select</button>
    
   </div>
 </div>
@@ -21,7 +26,8 @@ const Course = ({course}) => {
 };
 
 Course.propTypes = {
-    course: PropTypes.object.required
+    course: PropTypes.object.required,
+    handleAddToBookmarks: PropTypes.func.required
 };
 
 export default Course;

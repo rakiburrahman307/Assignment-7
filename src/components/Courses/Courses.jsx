@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Course from '../Course/course';
 
 
-const Courses = () => {
+const Courses = ({handleAddToBookmarks}) => {
     const [course, setCourse] = useState([]);
     useEffect(() =>{
         fetch('data.json')
@@ -16,7 +16,7 @@ const Courses = () => {
             <div className='md:2/3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
             
             {
-                course.map(course => <Course key={course.id} course={course}></Course>)
+                course.map(course => <Course handleAddToBookmarks={handleAddToBookmarks} key={course.id} course={course}></Course>)
             }
         </div>
       
@@ -24,7 +24,7 @@ const Courses = () => {
 };
 
 Courses.propTypes = {
-    
+    handleAddToBookmarks: PropTypes.func.required
 };
 
 export default Courses;
