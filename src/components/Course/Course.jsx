@@ -17,8 +17,8 @@ const Course = ({ course, handleAddToBookmarks }) => {
                 <h2 className="card-title">{title}</h2>
                 <p>{description}</p>
                 <div className='flex justify-evenly items-center gap-5'>
-                    <IoLogoUsd /><p>Price: {price}</p>
-                    <FiBookOpen /><p> Credit: {credit}</p>
+                    <IoLogoUsd /><p>Price:  {price}</p>
+                    <FiBookOpen /><p>Credit: {credit}</p>
                 </div>
 
                 <button onClick={() => handleAddToBookmarks(course)} className="bg-blue-800 text-white w-full px-6 py-2 rounded-xl hover:bg-blue-600">Select</button>
